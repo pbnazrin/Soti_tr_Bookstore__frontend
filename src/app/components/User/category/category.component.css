@@ -1,0 +1,29 @@
+.info-widget {
+    display: inline-block;
+
+}
+
+.middle {
+    float: left;
+    width: 92.7%;
+    overflow: auto;
+    /*will change this to hidden later to deny scolling to user*/
+    white-space: nowrap;
+    margin-left: 50px;
+    box-sizing: border-box;
+}
+
+
+
+.info-widget img {
+    width: 250px;
+    height: 250px;
+    margin: 20px;
+}
+
+.btncategory{
+    margin-top: 100px;
+    position: absolute;
+    border: none;
+    background-color: white;
+}

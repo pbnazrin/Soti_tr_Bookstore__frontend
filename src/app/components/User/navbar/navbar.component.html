@@ -1,0 +1,113 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" routerLink="/home">Book Store</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarNavDropdown"
+      aria-controls="navbarNavDropdown"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/home"
+            >Home <span class="sr-only">(current)</span></a
+          >
+        </li>
+  
+        <li class="nav-item">
+          <a class="nav-link" *ngIf="!authService.checkUserLogin()" routerLink="/register">Register</a>
+        </li>
+    
+        <li class="nav-item">
+          <a class="nav-link"   routerLink="/contact">Contact Us</a>
+        </li>
+        <!-- </ul>
+  
+      
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" />
+        <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">
+          Search
+        </button>
+      </form>
+    </div>
+  </nav> -->
+  
+      
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            *ngIf="!authService.checkUserLogin()"
+            routerLink="/login"
+            >Login</a
+          >
+        </li>
+      </ul>
+  
+      <ul class="navbar-nav ml-auto">
+        <!-- <form class="form-inline my-2 my-lg-0">
+          <input
+            class="form-control mr-sm-2"
+            type="search"
+            placeholder="Search"
+            aria-label="Search"
+            #searchB
+          />
+          <button
+            (click)="searchBooks(searchB.value)"
+            class="btn btn-outline-success my-2 my-sm-0"
+            type="submit"
+          >
+            Search
+          </button>
+        </form> -->
+  
+        <li class="nav-item">
+          <a *ngIf="authService.checkUserLogin()" class="nav-link">{{
+            "Welcome " + name
+          }}</a>
+        </li>
+  
+        <li class="nav-item">   
+          <a
+            *ngIf="authService.checkUserLogin()"
+            class="nav-link"
+            routerLink="{{ '/wishlist/' + UserId }}"
+            ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
+            </svg></a
+          >
+        </li>
+  
+        <li class="nav-item">   
+          <a
+            *ngIf="authService.checkUserLogin()"
+            class="nav-link"
+            routerLink="{{ '/cart/' + UserId }}"
+            ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+              <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+            </svg></a
+          >
+        </li>
+  
+        
+  
+  
+        <li class="nav-item">
+          <a
+            (click)="authService.logout()"
+            *ngIf="authService.checkUserLogin()"
+            class="nav-link"
+            routerLink="/home"
+            >Logout</a
+          >
+        </li>
+      </ul>
+    </div>
+  </nav>
+  

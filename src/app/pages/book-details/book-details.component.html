@@ -1,0 +1,37 @@
+<app-navbar></app-navbar>
+<div class="container">
+    <div class="wrapper">
+        <div class="row">
+            <div class="col-lg-6">
+                <img
+                src="{{'../../assets/books/' + book.Image}}"
+                class="card-img-top"
+                height=400/>
+            </div>
+            <div class="col-lg-6">
+                <h3>{{ book.Title }}</h3>
+        <p>{{ book.Author }}</p>
+        <p>Published in: {{ book.Year }}</p>
+        <p>{{ book.Description }}</p>
+        <br />
+        <h2>{{ book.Price | currency: "INR" }}</h2>
+        <br />
+        <!-- <button class="btn btn-primary">Add to Cart</button> -->
+
+        <a
+          routerLink="{{ '/cart/' + UserId }}"
+          class="btn btn-primary btn-block"
+          >Go to Cart</a
+        >
+        <button
+          (click)="onClickHandler(book)"
+          class="btn btn-primary btn-block"
+        >
+          Add to cart
+        </button>
+            </div>
+
+        </div>
+        
+    </div>
+</div>
